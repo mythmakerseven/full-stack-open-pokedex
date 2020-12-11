@@ -26,12 +26,26 @@ const PokemonPage = ({ previous, next }) => {
   const normalAbility = pokemon.abilities.find((ability) => !ability.is_hidden)
   const hiddenAbility = pokemon.abilities.find((ability) => ability.is_hidden === true)
 
+  const handlePrevious = () => {
+    if (!previous) {
+      return null
+    }
+    return (previous && <Link to={`/pokemon/${previous.name}`}>Previous</Link>)
+  }
+
+  const handleNext = () => {
+    if (!next) {
+      return null
+    }
+    return (next && <Link to={`/pokemon/${next.name}`}>Next</Link>)
+  }
+
   return (
     <>
       <div className="links">
-        {previous && <Link to={`/pokemon/${previous.name}`}>Previous</Link>}
+        {handlePrevious()}
         <Link to="/">Home</Link>
-        {next && <Link to={`/pokemon/${previous.name}`}>Next</Link>}
+        {handleNext()}
       </div>
       <div className={`pokemon-page pokemon-type-${type.name}`}>
         <div className="pokemon-image" style={{ backgroundImage: `url(${pokemon.sprites.front_default})` }} />
