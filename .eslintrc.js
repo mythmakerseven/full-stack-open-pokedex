@@ -4,8 +4,7 @@ module.exports = {
     "es6": true,
     "node": true,
     "browser": true,
-    "jest/globals": true,
-    "cypress": true
+    "jest/globals": true
   },
   "extends": [
     "eslint:recommended",
@@ -19,7 +18,7 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "react", "jest"
+    "react", "jest", "cypress"
   ],
   "rules": {
     "indent": [
