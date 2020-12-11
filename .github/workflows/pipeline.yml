@@ -35,3 +35,4 @@ jobs:
           heroku_email: c@camdenmecklem.com
           healthcheck: https://glacial-shore-21319.herokuapp.com/health
           checkstring: ok
+          rollbackonhealthcheckfailed: true
