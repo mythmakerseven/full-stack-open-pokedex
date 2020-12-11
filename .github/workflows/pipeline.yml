@@ -33,3 +33,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: glacial-shore-21319
           heroku_email: c@camdenmecklem.com
+          healthcheck: https://glacial-shore-21319.herokuapp.com/health
