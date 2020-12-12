@@ -4,11 +4,14 @@ on:
   schedule:
     - cron: '20/15 * * * *'
 
-steps:
-  - name: periodic health check
-    uses: jtalk/url-health-check-action@v1.2
-    with:
-      url: https://glacial-shore-21319.herokuapp.com/
-      follow-redirect: no
-      max-attempts: 3
-      retry-delay: 20s
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: periodic health check
+      uses: jtalk/url-health-check-action@v1.2
+      with:
+        url: https://glacial-shore-21319.herokuapp.com/
+        follow-redirect: no
+        max-attempts: 3
+        retry-delay: 20s
